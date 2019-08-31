@@ -1,7 +1,7 @@
 # Project information
 
-site_name: r00tz CTF on AWS
-site_short_name: r00tz CTF on AWS
+site_name: r00tz CTF by AWS
+site_short_name: r00tz CTF by AWS
 site_description: 'This workshop is for kids ages 8 - 18 to become more familiar with cloud security concepts.'
 site_author: 'aws-security-workshops@amazon.com'
 site_url: 'https://r00tz-ctf.awssecworkshops.com/'
@@ -44,9 +44,8 @@ markdown_extensions:
 
 # Navigation
 nav:
-  - Overview: 'index.md'
+  - Security Capture the Flag (CTF): 'index.md'
   - Environment Setup: 'environment-setup.md'
   - Instructor Walkthrough: 'walkthrough.md'
-  - Security Capture the Flag (CTF): 'workbook.md'
   - Contributing: 'contribute.md'
   - License: 'license.md'
