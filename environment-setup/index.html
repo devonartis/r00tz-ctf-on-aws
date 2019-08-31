@@ -42,7 +42,7 @@
     
     
       
-        <title>Environment Setup - r00tz CTF on AWS</title>
+        <title>Environment Setup - r00tz CTF by AWS</title>
       
     
     
@@ -157,7 +157,7 @@
             
               
                 <span class="md-header-nav__topic">
-                  r00tz CTF on AWS
+                  r00tz CTF by AWS
                 </span>
                 <span class="md-header-nav__topic">
                   Environment Setup
@@ -255,14 +255,12 @@
         
   <li class="md-tabs__item">
     
-      <a href=".." title="Overview" class="md-tabs__link md-tabs__link--active">
-        Overview
+      <a href=".." title="Security Capture the Flag (CTF)" class="md-tabs__link md-tabs__link--active">
+        Security Capture the Flag (CTF)
       </a>
     
   </li>
 
-      
-        
       
         
       
@@ -308,12 +306,12 @@
   <!-- Site title -->
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="https://r00tz-ctf.awssecworkshops.com/"
-        title="r00tz CTF on AWS" class="md-nav__button md-logo">
+        title="r00tz CTF by AWS" class="md-nav__button md-logo">
       
         <img src="../assets/images/aws_smile_logo.png" width="48" height="48" />
       
     </a>
-    r00tz CTF on AWS
+    r00tz CTF by AWS
   </label>
 
   <!-- Repository containing source -->
@@ -348,8 +346,8 @@
 
 
   <li class="md-nav__item">
-    <a href=".." title="Overview" class="md-nav__link">
-      Overview
+    <a href=".." title="Security Capture the Flag (CTF)" class="md-nav__link">
+      Security Capture the Flag (CTF)
     </a>
   </li>
 
@@ -368,9 +366,52 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Environment Setup
+      </label>
+    
     <a href="./" title="Environment Setup" class="md-nav__link md-nav__link--active">
       Environment Setup
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-dhcp" title="Configuring DHCP" class="md-nav__link">
+    Configuring DHCP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resetting-the-lab-environment-between-students" title="Resetting the Lab Environment Between Students" class="md-nav__link">
+    Resetting the Lab Environment Between Students
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guide-for-students" title="Guide for Students" class="md-nav__link">
+    Guide for Students
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -383,18 +424,6 @@
   <li class="md-nav__item">
     <a href="../walkthrough/" title="Instructor Walkthrough" class="md-nav__link">
       Instructor Walkthrough
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../workbook/" title="Security Capture the Flag (CTF)" class="md-nav__link">
-      Security Capture the Flag (CTF)
     </a>
   </li>
 
@@ -440,6 +469,36 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-dhcp" title="Configuring DHCP" class="md-nav__link">
+    Configuring DHCP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resetting-the-lab-environment-between-students" title="Resetting the Lab Environment Between Students" class="md-nav__link">
+    Resetting the Lab Environment Between Students
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guide-for-students" title="Guide for Students" class="md-nav__link">
+    Guide for Students
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -454,29 +513,25 @@
                 
                 
                 <h1 id="environment-setup">Environment Setup</h1>
+<p>Download and install VirtualBox: <a href="https://www.virtualbox.org/" target="_blank">https://www.virtualbox.org/</a></p>
 <ol>
-<li>Download and install VirtualBox: <a href="https://www.virtualbox.org/"><em>https://www.virtualbox.org/</em></a><ol>
 <li>You should be safe using the default settings when installing</li>
 <li>Note you may get a popup about downloading an updated ExtensionPack, feel free to do so</li>
 <li>Open a command prompt and cd into the VirtualBox Program Files directory, something like: cd "C:\Program Files\Oracle\VirtualBox"</li>
 <li>Configure a dhcpserver for the internal network intnet via:<em> VBoxManage dhcpserver add -netname intnet -ip 10.13.13.100 -netmask 255.255.255.0 -lowerip 10.13.13.101 -upperip 10.13.13.254 -enable</em></li>
 </ol>
-</li>
-</ol>
-<p>[Image: image.png]</p>
-<blockquote>
-<p>1 Configuring DHCP</p>
-</blockquote>
-<p>Configuring DHCP via:</p>
-<ul>
+<p><img alt="Image" src="../images/setup-1.png" title="Image" /></p>
+<h2 id="configuring-dhcp">Configuring DHCP</h2>
+<div class="codehilite"><pre><span></span>VBoxManage dhcpserver add -netname intnet -ip 10.13.13.100 -netmask 255.255.255.0 -lowerip 10.13.13.101 -upperip 10.13.13.103 -enable
+</pre></div>
+
+
+<ol>
 <li>
-<p><strong><em>VBoxManage dhcpserver add -netname intnet -ip 10.13.13.100 -netmask 255.255.255.0 -lowerip 10.13.13.101 -upperip 10.13.13.103 -enable</em></strong></p>
-</li>
-<li>
-<p>Download the Kali Linux VirtualBox image: <a href="https://www.offensive-security.com/kali-linux-vm-vmware-virtualbox-image-download/"><em>https://www.offensive-security.com/kali-linux-vm-vmware-virtualbox-image-download/</em></a></p>
+<p>Download the Kali Linux VirtualBox image: <a href="https://www.offensive-security.com/kali-linux-vm-vmware-virtualbox-image-download/" target="_blank">https://www.offensive-security.com/kali-linux-vm-vmware-virtualbox-image-download/</a>.</p>
 </li>
 <li>
-<p>Download the Mr. Robot image: <a href="https://www.vulnhub.com/entry/mr-robot-1,151/"><em>https://www.vulnhub.com/entry/mr-robot-1,151/</em></a></p>
+<p>Download the Mr. Robot image: <a href="https://www.vulnhub.com/entry/mr-robot-1,151/" target="_blank">https://www.vulnhub.com/entry/mr-robot-1,151/</a>.</p>
 <ol>
 <li>
 <p>Import the MrRobot Image into VirtualBox via the import button, you shouldn’t need to change any of the preconfigured settings</p>
@@ -497,22 +552,28 @@
 <li>Navigate to: */opt/bitnami/apps/wordpress/htdocs/video *</li>
 <li>Delete everything in this file except fsociety.webm. (*this command will content from the web application that may be somewhat controversial.  Since our focus is on educating students about general CTF challenge solving &amp; pentesting concepts, we’re removing extraneous material.) *</li>
 </ol>
+<p><img alt="Image" src="../images/setup-1.png" title="Image" /></p>
 </li>
-</ul>
-<p>[Image: image.png]
-    1. Once the machine is running, click Machine | Take Snapshot to take a snapshot of the Mr. Robot VM at its initial state
-1. Repeat the process for the Kali Linux OVA making sure to use the same network that was set for Mr. Robot VM
-    1. Turn off the machine and configure it to use the same internal network that the Mr. Robot VM is on
-    2. Start the machine and take a snapshot just as with the Mr. Robot VM
-2. From the Mr. Robot VM get it’s IP address</p>
-<ol>
-<li>From the Kali Linux machine, navigate to the IP address in the web browser and confirm the site loads.</li>
+<li>
+<p>Once the machine is running, click Machine | Take Snapshot to take a snapshot of the Mr. Robot VM at its initial state</p>
+</li>
+<li>Repeat the process for the Kali Linux OVA making sure to use the same network that was set for Mr. Robot VM<ol>
+<li>Turn off the machine and configure it to use the same internal network that the Mr. Robot VM is on</li>
+<li>Start the machine and take a snapshot just as with the Mr. Robot VM</li>
 </ol>
-<p><strong>Resetting the Lab Environment Between Students</strong></p>
+</li>
+<li>
+<p>From the Mr. Robot VM get it’s IP address</p>
+</li>
+<li>
+<p>From the Kali Linux machine, navigate to the IP address in the web browser and confirm the site loads.</p>
+</li>
+</ol>
+<h2 id="resetting-the-lab-environment-between-students">Resetting the Lab Environment Between Students</h2>
 <ol>
 <li>This should be as easy as reloading back to the snapshots taken during the setup to ensure a fresh, clean environment for the next student</li>
 </ol>
-<p><strong>Guide for Students</strong></p>
+<h2 id="guide-for-students">Guide for Students</h2>
 <ol>
 <li>Start off with the basics of Linux commands: cd, clear, ls, cat, vim, grep, man, su etc.<ol>
 <li>Talk about user directories</li>
@@ -539,7 +600,6 @@
 <li>Talk about hashes and how MD5 is considered broken</li>
 <li>Talk about the SUID bit and why it’s dangerous</li>
 </ol>
-<p>After you have successfully setup your environment, you can proceed to the next module.</p>
                 
                   
                 
@@ -560,7 +620,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href=".." title="Overview" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href=".." title="Security Capture the Flag (CTF)" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -569,7 +629,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Overview
+                Security Capture the Flag (CTF)
               </span>
             </div>
           </a>
